@@ -44,10 +44,10 @@ function App() {
     })
   }
 
-  function handleEducationChange(id, e) {
+  function handleEducationChange(e) {
     setEducationArray(
-      educationArray.map(education => {
-        if (education.school === id) {
+      educationArray.map((education, id) => {
+        if (education.id === id) {
           return {...education, [e.target.name]: e.target.value}
         } else {
           return education
