@@ -33,8 +33,7 @@ function App() {
       startDate: 'date', 
       endDate: 'date',
       location: 'location'
-    },
-    
+    },    
   ])
 
   function handleUserChange(e) {
@@ -44,9 +43,10 @@ function App() {
     })
   }
 
-  function handleEducationChange(e) {
+  function handleEducationChange(id, e) {
+    console.log('aaaaaaaaaaaaa', e)
     setEducationArray(
-      educationArray.map((education, id) => {
+      educationArray.map((education) => {
         if (education.id === id) {
           return {...education, [e.target.name]: e.target.value}
         } else {
@@ -60,8 +60,7 @@ function App() {
   const educationList = educationArray.map((education) => {
     return (
       <>
-        <EducationInfo {...education} onChange={handleEducationChange}/>
-        <EducationDisplay {...education}/>
+        <EducationInfo {...education} onChange={(e) => handleEducationChange(education.id, e)}/>
       </>
     )
     
@@ -71,14 +70,11 @@ function App() {
     <div className='main-container'>
       <div className="user-input-container">
         <GeneralInfo {...user} onChange={handleUserChange}/>
-        {/* <EducationInfo {...educationArray} onChange={handleEducationChange}/>
-        <EducationInfo {...educationArray} onChange={handleEducationChange}/> */}
+        {educationList}
       </div>
       <div className="user-output-container">
         <ResumeHeader {...user}/>
-        {educationList}
-        {/* <EducationDisplay {...educationArray}/>
-        <EducationDisplay {...educationArray}/> */}
+        <EducationDisplay educationArray={educationArray}/>
       </div>
     </div>
   )
