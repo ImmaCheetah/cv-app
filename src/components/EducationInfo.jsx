@@ -1,13 +1,53 @@
 export default function EducationInfo(props) {
     console.log(props)
     return (
-        <div className="education-info-div" >
+        <form className="education-info-form" >
             <h1>Education Info</h1>
-            <input name="school" type="text" placeholder="School" value={props.school} onChange={props.onChange}/>
-            <input name="degree" type="text" placeholder="Degree" value={props.degree} onChange={props.onChange}/>
-            <input name="startDate" type="text" placeholder="Start Date" value={props.startDate} onChange={props.onChange}/>
-            <input name="endDate" type="text" placeholder="End Date" value={props.endDate} onChange={props.onChange}/>
-            <input name="location" type="text" placeholder="Location" value={props.location} onChange={props.onChange}/>
-        </div>
+            <label htmlFor="school">School</label>
+            <input 
+                type="text" 
+                placeholder="School"
+                id="school" 
+                name="school" 
+                value={props.school} 
+                onChange={props.onChange}
+            />
+            <label htmlFor="degree">Degree</label>
+            <input 
+                type="text" 
+                placeholder="Degree" 
+                id="degree"
+                name="degree" 
+                value={props.degree} 
+                onChange={props.onChange}
+            />
+            <label htmlFor="start-date">Start Date</label>
+            <input 
+                type="text" 
+                placeholder="Start Date"
+                id="start-date" 
+                name="startDate" 
+                value={props.startDate} 
+                onChange={props.onChange}
+            />
+            <label htmlFor="end-date">End Date</label>
+            <input 
+                type="text" 
+                placeholder="End Date"
+                id="end-date" 
+                name="endDate" 
+                value={props.endDate} 
+                onChange={props.onChange}
+            />
+            <label htmlFor="location">Location</label>
+            <input 
+                type="text" 
+                placeholder="Location" 
+                id="location"
+                name="location" 
+                value={props.location} 
+                onChange={props.onChange}
+            />
+        </form>
     )
 }
