@@ -61,6 +61,14 @@ function App() {
     })
     console.log(educationArray)
   }
+
+  function removeEducation(id) {
+    setEducationArray(
+      educationArray.filter((education) => {
+        return education.id !== id
+      })
+    )
+  }
   
   const educationList = educationArray.map((education, index) => {
     return (
@@ -70,6 +78,7 @@ function App() {
           isActive={activeIndex === index} 
           onClick={() => setActiveIndex(index)}
           onToggle={() => setActiveIndex(false)}
+          onRemove={(e) => removeEducation(education.id)}
           onChange={(e) => handleEducationChange(education.id, e)} 
         />
       </>

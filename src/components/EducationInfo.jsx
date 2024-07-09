@@ -2,12 +2,6 @@ import { useState } from "react"
 
 export default function EducationInfo(props) {
 
-    // function toggleForm(e) {
-    //     e.preventDefault()
-
-    //     setIsActive(!props.isActive)
-    // }
- 
     return (
         <form className="education-info-form" >
             {!props.isActive && <h3>{props.school}</h3>}
@@ -58,12 +52,17 @@ export default function EducationInfo(props) {
                     value={props.location}
                     onChange={props.onChange}
                 />
-                {/* <button>Save</button> */}
                 <button onClick={(e) => {
                         e.preventDefault()
                         props.onToggle()
                     }}>
                     Save
+                </button>
+                <button onClick={(e) => {
+                        e.preventDefault()
+                        props.onRemove()
+                    }}>
+                    Delete
                 </button>
             </>
             }
