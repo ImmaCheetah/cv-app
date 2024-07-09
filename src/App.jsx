@@ -20,7 +20,7 @@ function App() {
 
   const [educationArray, setEducationArray] = useState([
     {
-      id: 0,
+      id: 1,
       school: 'school name',
       degree: 'degree',
       startDate: 'date', 
@@ -51,7 +51,7 @@ function App() {
   function addEducation() {
     setEducationArray(prevEducation => {
       return [...prevEducation, {
-        id: nextID++,
+        id: prevEducation.length + 1,
         school: 'school name2',
         degree: 'degree',
         startDate: 'date', 
