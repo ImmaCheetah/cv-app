@@ -44,7 +44,6 @@ function App() {
   }
 
   function handleEducationChange(id, e) {
-    console.log('aaaaaaaaaaaaa', e)
     setEducationArray(
       educationArray.map((education) => {
         if (education.id === id) {
@@ -70,7 +69,11 @@ function App() {
     <div className='main-container'>
       <div className="user-input-container">
         <GeneralInfo {...user} onChange={handleUserChange}/>
-        {educationList}
+        <div className='education-info-div'>
+          <h1>Education Info</h1>
+          {educationList}
+          <button>Add Education</button>
+        </div>
       </div>
       <div className="user-output-container">
         <ResumeHeader {...user}/>
