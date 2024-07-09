@@ -1,17 +1,17 @@
 import { useState } from "react"
 
 export default function EducationInfo(props) {
-    const [isActive, setIsActive] = useState(false)
 
-    function toggleForm(e) {
-        e.preventDefault()
+    // function toggleForm(e) {
+    //     e.preventDefault()
 
-        setIsActive(!isActive)
-    } 
+    //     setIsActive(!props.isActive)
+    // }
+ 
     return (
         <form className="education-info-form" >
-            {!isActive && <h3>{props.school}</h3>}
-            {isActive &&     
+            {!props.isActive && <h3>{props.school}</h3>}
+            {props.isActive &&     
             <>
                 <label htmlFor="school">School</label>
                 <input
@@ -59,10 +59,19 @@ export default function EducationInfo(props) {
                     onChange={props.onChange}
                 />
                 {/* <button>Save</button> */}
+                <button onClick={(e) => {
+                        e.preventDefault()
+                        props.onToggle()
+                    }}>
+                    Close
+                </button>
             </>
             }
-            <button onClick={toggleForm}>
-                {isActive ? "Save" : "Edit"}
+            <button onClick={(e) => {
+                    e.preventDefault()
+                    props.onClick()
+                }}>
+                {props.isActive ? "Save" : "Edit"}
             </button>
         </form>
     )

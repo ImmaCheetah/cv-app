@@ -6,6 +6,9 @@ import EducationInfo from './components/EducationInfo'
 import EducationDisplay from './components/EducationDisplay'
 
 function App() {
+  let nextID = 1;
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const [user, setUser] = useState({
     firstName: 'First Name',
@@ -14,8 +17,6 @@ function App() {
     phone: '123456',
     address: '123 Main St',
   })
-
-  let nextID = 1;
 
   const [educationArray, setEducationArray] = useState([
     {
@@ -61,10 +62,16 @@ function App() {
     console.log(educationArray)
   }
   
-  const educationList = educationArray.map((education) => {
+  const educationList = educationArray.map((education, index) => {
     return (
       <>
-        <EducationInfo {...education} onChange={(e) => handleEducationChange(education.id, e)}/>
+        <EducationInfo 
+          {...education} 
+          isActive={activeIndex === index} 
+          onClick={() => setActiveIndex(index)}
+          onToggle={() => setActiveIndex(false)}
+          onChange={(e) => handleEducationChange(education.id, e)} 
+        />
       </>
     )
   })
