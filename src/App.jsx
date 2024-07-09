@@ -15,20 +15,12 @@ function App() {
     address: '123 Main St',
   })
 
-  let nextID = 0;
+  let nextID = 1;
 
   const [educationArray, setEducationArray] = useState([
     {
       id: 0,
       school: 'school name',
-      degree: 'degree',
-      startDate: 'date', 
-      endDate: 'date',
-      location: 'location'
-    },
-    {
-      id: 1,
-      school: 'school name2',
       degree: 'degree',
       startDate: 'date', 
       endDate: 'date',
@@ -54,7 +46,20 @@ function App() {
       })
     )
   }
-  // [e.target.name]: e.target.value
+  
+  function addEducation() {
+    setEducationArray(prevEducation => {
+      return [...prevEducation, {
+        id: nextID++,
+        school: 'school name2',
+        degree: 'degree',
+        startDate: 'date', 
+        endDate: 'date',
+        location: 'location'
+      }]
+    })
+    console.log(educationArray)
+  }
   
   const educationList = educationArray.map((education) => {
     return (
@@ -62,7 +67,6 @@ function App() {
         <EducationInfo {...education} onChange={(e) => handleEducationChange(education.id, e)}/>
       </>
     )
-    
   })
 
   return (
@@ -72,7 +76,7 @@ function App() {
         <div className='education-info-div'>
           <h1>Education Info</h1>
           {educationList}
-          <button>Add Education</button>
+          <button onClick={addEducation}>Add Education</button>
         </div>
       </div>
       <div className="user-output-container">
