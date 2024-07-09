@@ -3,7 +3,7 @@
   gap: 30rem;
 }
 
-.general-info-form, .education-info-form {
+.general-info-form, .education-info-form, .experience-info-form {
   display: flex;
   flex-direction: column;
   border: solid 1px black;

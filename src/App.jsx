@@ -4,6 +4,9 @@ import GeneralInfo from './components/GeneralInfo'
 import ResumeHeader from './components/ResumeHeader'
 import EducationInfo from './components/EducationInfo'
 import EducationDisplay from './components/EducationDisplay'
+import ExperienceInfo from './components/ExperienceInfo'
+import ExperienceDisplay from './components/ExperienceDisplay'
+
 
 function App() {
   let nextID = 1;
@@ -21,11 +24,23 @@ function App() {
   const [educationArray, setEducationArray] = useState([
     {
       id: 1,
-      school: 'school name',
-      degree: 'degree',
-      startDate: 'date', 
-      endDate: 'date',
-      location: 'location'
+      school: '',
+      degree: '',
+      startDate: '', 
+      endDate: '',
+      location: ''
+    },    
+  ])
+
+  const [experienceArray, setExperienceArray] = useState([
+    {
+      id: 1,
+      company: '',
+      title: '',
+      startDate: '', 
+      endDate: '',
+      location: '',
+      description: ''
     },    
   ])
 
@@ -52,11 +67,11 @@ function App() {
     setEducationArray(prevEducation => {
       return [...prevEducation, {
         id: prevEducation.length + 1,
-        school: 'school name2',
-        degree: 'degree',
-        startDate: 'date', 
-        endDate: 'date',
-        location: 'location'
+        school: 'School Name',
+        degree: '',
+        startDate: '', 
+        endDate: '',
+        location: ''
       }]
     })
     console.log(educationArray)
@@ -69,6 +84,40 @@ function App() {
       })
     )
   }
+
+  function handleExperienceChange(id, e) {
+    setExperienceArray(
+      experienceArray.map((experience) => {
+        if (experience.id === id) {
+          return {...experience, [e.target.name]: e.target.value}
+        } else {
+          return experience
+        }
+      })
+    )
+  }
+
+  function addExperience() {
+    setExperienceArray(prevExperience => {
+      return [...prevExperience, {
+        id: prevExperience.length + 1,
+        company: 'Company Name',
+        title: '',
+        startDate: '', 
+        endDate: '',
+        location: '',
+        description: ''
+      }]
+    })
+  }
+
+  function removeExperience(id) {
+    setExperienceArray(
+      experienceArray.filter((experience) => {
+        return experience.id !== id
+      })
+    )
+  }
   
   const educationList = educationArray.map((education, index) => {
     return (
@@ -78,8 +127,23 @@ function App() {
           isActive={activeIndex === index} 
           onClick={() => setActiveIndex(index)}
           onToggle={() => setActiveIndex(false)}
-          onRemove={(e) => removeEducation(education.id)}
+          onRemove={() => removeEducation(education.id)}
           onChange={(e) => handleEducationChange(education.id, e)} 
+        />
+      </>
+    )
+  })
+
+  const experienceList = experienceArray.map((experience, index) => {
+    return (
+      <>
+        <ExperienceInfo 
+          {...experience} 
+          isActive={activeIndex === index} 
+          onClick={() => setActiveIndex(index)}
+          onToggle={() => setActiveIndex(false)}
+          onRemove={() => removeExperience(experience.id)}
+          onChange={(e) => handleExperienceChange(experience.id, e)} 
         />
       </>
     )
@@ -94,10 +158,16 @@ function App() {
           {educationList}
           <button onClick={addEducation}>Add Education</button>
         </div>
+        <div className='experience-info-div'>
+          <h1>Experience</h1>
+          {experienceList}
+          <button onClick={addExperience}>Add Experience</button>
+        </div>
       </div>
       <div className="user-output-container">
         <ResumeHeader {...user}/>
         <EducationDisplay educationArray={educationArray}/>
+        <ExperienceDisplay experienceArray={experienceArray}/>
       </div>
     </div>
   )
