@@ -63,16 +63,21 @@ export default function EducationInfo(props) {
                         e.preventDefault()
                         props.onToggle()
                     }}>
-                    Close
+                    Save
                 </button>
             </>
             }
-            <button onClick={(e) => {
-                    e.preventDefault()
-                    props.onClick()
-                }}>
-                {props.isActive ? "Save" : "Edit"}
-            </button>
+            { 
+                !props.isActive && 
+                <button 
+                    onClick={(e) => {
+                        e.preventDefault()
+                        props.onClick()}
+                    }
+                >
+                    Edit
+                </button>
+            }
         </form>
     )
 }
