@@ -1,8 +1,8 @@
-
+import '../styles/forms.css'
 
 export default function ExperienceInfo(props) {
     return (
-        <form className="experience-info-form" >
+        <form className="experience-info form" >
             {!props.isActive && <h3>{props.company}</h3>}
             {props.isActive &&     
             <>
@@ -60,13 +60,17 @@ export default function ExperienceInfo(props) {
                     value={props.description}
                     onChange={props.onChange}
                 />
-                <button onClick={(e) => {
+                <button
+                    className='save-btn' 
+                    onClick={(e) => {
                         e.preventDefault()
                         props.onToggle()
                     }}>
                     Save
                 </button>
-                <button onClick={(e) => {
+                <button
+                    className='delete-btn'  
+                    onClick={(e) => {
                         e.preventDefault()
                         props.onRemove()
                     }}>

@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function EducationInfo(props) {
 
     return (
-        <form className="education-info-form" >
+        <form className="education-info form" >
             {!props.isActive && <h3>{props.school}</h3>}
             {props.isActive &&     
             <>

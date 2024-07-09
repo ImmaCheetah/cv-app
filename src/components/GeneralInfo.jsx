@@ -1,8 +1,7 @@
 export default function GeneralInfo(props) {
 
     return (
-        <form className="general-info-form" >
-            <h1>General Info</h1>
+        <form className="general-info form" >
             <label htmlFor="first-name">First Name</label>
             <input 
                 type="text" 

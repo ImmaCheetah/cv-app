@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
+import './styles/button.css'
 import GeneralInfo from './components/GeneralInfo'
 import ResumeHeader from './components/ResumeHeader'
 import EducationInfo from './components/EducationInfo'
@@ -9,8 +10,6 @@ import ExperienceDisplay from './components/ExperienceDisplay'
 
 
 function App() {
-  let nextID = 1;
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [user, setUser] = useState({
@@ -152,14 +151,18 @@ function App() {
   return (
     <div className='main-container'>
       <div className="user-input-container">
-        <GeneralInfo {...user} onChange={handleUserChange}/>
+        <h1>General Info</h1>
+        <GeneralInfo 
+          {...user} 
+          onChange={handleUserChange}
+        />
         <div className='education-info-div'>
-          <h1>Education Info</h1>
+          <h2>Education Info</h2>
           {educationList}
           <button onClick={addEducation}>Add Education</button>
         </div>
         <div className='experience-info-div'>
-          <h1>Experience</h1>
+          <h3>Experience</h3>
           {experienceList}
           <button onClick={addExperience}>Add Experience</button>
         </div>
