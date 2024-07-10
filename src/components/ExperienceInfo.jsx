@@ -3,15 +3,29 @@ import '../styles/forms.css'
 export default function ExperienceInfo(props) {
     return (
         <form className="experience-info form" >  
-            {(() => {
-                if (!props.isActive && !props.company) {
-                    return <h4>Company Name</h4>
-                } else if (props.isActive) {
-                    return ''
-                } else {
-                    return <h4>{props.company}</h4>
+            <div className="form-placeholder">
+                {(() => {
+                    if (!props.isActive && !props.company) {
+                        return <h4>Company Name</h4>
+                    } else if (props.isActive) {
+                        return ''
+                    } else {
+                        return <h4>{props.company}</h4>
+                    }
+                })()}
+                {
+                    !props.isActive &&
+                    <button
+                        className='edit-btn'
+                        onClick={(e) => {
+                            e.preventDefault()
+                            props.onClick()}
+                        }
+                    >
+                        Edit
+                    </button>
                 }
-            })()}  
+            </div>
             {props.isActive &&     
             <>
                 <label htmlFor="company">Company</label>
@@ -85,17 +99,6 @@ export default function ExperienceInfo(props) {
                     Delete
                 </button>
             </>
-            }
-            { 
-                !props.isActive && 
-                <button 
-                    onClick={(e) => {
-                        e.preventDefault()
-                        props.onClick()}
-                    }
-                >
-                    Edit
-                </button>
             }
         </form>
     )

@@ -6,7 +6,7 @@ button {
     font-size: 1em;
     border-radius: 0.4em;
     cursor: pointer;
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 .save-btn {
@@ -18,7 +18,7 @@ button {
 .add-btn {
     position: absolute;
     top: 1.4em;
-    right: 0.3em;
+    right: 0.5em;
     font-size: 1em;
     height: 2.5em;
     width: 2.5em;
@@ -30,4 +30,8 @@ button {
 
 .add-btn-svg {
     width: 1.5em;
+}
+
+.edit-btn {
+
 }

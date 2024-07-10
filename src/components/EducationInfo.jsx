@@ -4,15 +4,29 @@ export default function EducationInfo(props) {
 
     return (
         <form className="education-info form" >
-            {(() => {
-                if (!props.isActive && !props.school) {
-                    return <h4>School Name</h4>
-                } else if (props.isActive) {
-                    return ''
-                } else {
-                    return <h4>{props.school}</h4>
+            <div className="form-placeholder">
+                {(() => {
+                    if (!props.isActive && !props.school) {
+                        return <h4>School Name</h4>
+                    } else if (props.isActive) {
+                        return ''
+                    } else {
+                        return <h4>{props.school}</h4>
+                    }
+                })()}
+                {
+                    !props.isActive &&
+                    <button
+                        className='edit-btn'
+                        onClick={(e) => {
+                            e.preventDefault()
+                            props.onClick()}
+                        }
+                    >
+                        Edit
+                    </button>
                 }
-            })()} 
+            </div>
             {props.isActive &&     
             <>
                 <label htmlFor="school">School</label>
@@ -76,17 +90,7 @@ export default function EducationInfo(props) {
                 </button>
             </>
             }
-            { 
-                !props.isActive && 
-                <button 
-                    onClick={(e) => {
-                        e.preventDefault()
-                        props.onClick()}
-                    }
-                >
-                    Edit
-                </button>
-            }
+            
         </form>
     )
 }
