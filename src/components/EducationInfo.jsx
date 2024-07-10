@@ -60,7 +60,9 @@ export default function EducationInfo(props) {
                     value={props.location}
                     onChange={props.onChange}
                 />
-                <button onClick={(e) => {
+                <button 
+                    className='save-btn'
+                    onClick={(e) => {
                         e.preventDefault()
                         props.onToggle()
                     }}>

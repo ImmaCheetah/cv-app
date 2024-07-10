@@ -10,7 +10,8 @@ import ExperienceDisplay from './components/ExperienceDisplay'
 
 
 function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeEduIndex, setActiveEduIndex] = useState(0);
+  const [activeExpIndex, setActiveExpIndex] = useState(0);
 
   const [user, setUser] = useState({
     firstName: 'First Name',
@@ -123,9 +124,9 @@ function App() {
       <>
         <EducationInfo 
           {...education} 
-          isActive={activeIndex === index} 
-          onClick={() => setActiveIndex(index)}
-          onToggle={() => setActiveIndex(false)}
+          isActive={activeEduIndex === index} 
+          onClick={() => setActiveEduIndex(index)}
+          onToggle={() => setActiveEduIndex(false)}
           onRemove={() => removeEducation(education.id)}
           onChange={(e) => handleEducationChange(education.id, e)} 
         />
@@ -138,9 +139,9 @@ function App() {
       <>
         <ExperienceInfo 
           {...experience} 
-          isActive={activeIndex === index} 
-          onClick={() => setActiveIndex(index)}
-          onToggle={() => setActiveIndex(false)}
+          isActive={activeExpIndex === index} 
+          onClick={() => setActiveExpIndex(index)}
+          onToggle={() => setActiveExpIndex(false)}
           onRemove={() => removeExperience(experience.id)}
           onChange={(e) => handleExperienceChange(experience.id, e)} 
         />
