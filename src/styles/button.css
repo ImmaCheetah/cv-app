@@ -6,19 +6,31 @@ button {
     font-size: 1em;
     border-radius: 0.4em;
     cursor: pointer;
-    /* border: solid 1px black; */
+    transition: transform 200ms;
+
+}
+
+button:hover {
+    transform: translateY(-3px); 
 }
 
 .save-btn {
     background-color: rgb(24, 136, 249);
     color: white;
     font-weight: bold;
+    float: right;
+}
+
+.delete-btn {
+    background-color: rgb(217, 12, 12);
+    color: white;
+    font-weight: bold;  
 }
 
 .add-btn {
     position: absolute;
-    top: 1.4em;
-    right: 0.5em;
+    top: 1.3em;
+    right: 0.6em;
     font-size: 1em;
     height: 2.5em;
     width: 2.5em;
@@ -30,8 +42,4 @@ button {
 
 .add-btn-svg {
     width: 1.5em;
-}
-
-.edit-btn {
-
 }

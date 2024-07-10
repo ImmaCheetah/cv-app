@@ -75,18 +75,20 @@ export default function EducationInfo(props) {
                     onChange={props.onChange}
                 />
                 <button 
+                        className='delete-btn' 
+                        onClick={(e) => {
+                        e.preventDefault()
+                        props.onRemove()
+                    }}>
+                    Delete
+                </button>
+                <button 
                     className='save-btn'
                     onClick={(e) => {
                         e.preventDefault()
                         props.onToggle()
                     }}>
                     Save
-                </button>
-                <button onClick={(e) => {
-                        e.preventDefault()
-                        props.onRemove()
-                    }}>
-                    Delete
                 </button>
             </>
             }

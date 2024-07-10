@@ -1,0 +1,30 @@
+.resume-header-div {
+    background-color: rgb(73, 49, 118);
+    min-height: 5em;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+}
+
+img {
+    width: 1.2em;
+}
+
+.contact-details {
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    font-size: 1.1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.email, .phone, .address {
+    margin-left: -0.7em;
+    
+}
+
+.full-name {
+    font-size: 2em;
+    font-weight: bold;
+}

@@ -83,20 +83,20 @@ export default function ExperienceInfo(props) {
                     onChange={props.onChange}
                 />
                 <button
-                    className='save-btn' 
-                    onClick={(e) => {
-                        e.preventDefault()
-                        props.onToggle()
-                    }}>
-                    Save
-                </button>
-                <button
                     className='delete-btn'  
                     onClick={(e) => {
                         e.preventDefault()
                         props.onRemove()
                     }}>
                     Delete
+                </button>
+                <button
+                    className='save-btn' 
+                    onClick={(e) => {
+                        e.preventDefault()
+                        props.onToggle()
+                    }}>
+                    Save
                 </button>
             </>
             }

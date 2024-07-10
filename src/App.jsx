@@ -14,10 +14,10 @@ function App() {
   const [activeExpIndex, setActiveExpIndex] = useState(0);
 
   const [user, setUser] = useState({
-    firstName: 'First Name',
-    lastName: 'Last Name',
-    email: 'first@email.com',
-    phone: '123456',
+    firstName: 'Joe',
+    lastName: 'Bopper',
+    email: 'joe@email.com',
+    phone: '400-500-9000',
     address: '123 Main St',
   })
 
