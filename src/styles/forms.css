@@ -1,15 +1,21 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5em;
-    background-color: rgb(245, 245, 245);
-    border-radius: 0.5em;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    max-width: 15em;
+}
+
+.form label {
+    font-weight: bold;
+    margin-bottom: 5em;
 }
 
 .form input {
     appearance: none;
-    border: solid 2px gray;
+    border: none;
+    background-color: rgb(245, 245, 245);
     border-radius: 0.3em;
     padding: 0.5em;
     font-size: 1em;
+    margin-bottom: 0.8em;
+    margin-top: 0.2em;
 }

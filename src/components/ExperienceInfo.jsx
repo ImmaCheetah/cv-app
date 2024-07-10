@@ -2,14 +2,22 @@ import '../styles/forms.css'
 
 export default function ExperienceInfo(props) {
     return (
-        <form className="experience-info form" >
-            {!props.isActive && <h3>{props.company}</h3>}
+        <form className="experience-info form" >  
+            {(() => {
+                if (!props.isActive && !props.company) {
+                    return <h4>Company Name</h4>
+                } else if (props.isActive) {
+                    return ''
+                } else {
+                    return <h4>{props.company}</h4>
+                }
+            })()}  
             {props.isActive &&     
             <>
                 <label htmlFor="company">Company</label>
                 <input
                     type="text"
-                    placeholder="company"
+                    placeholder="Company"
                     id="company"
                     name="company"
                     value={props.company}
@@ -51,7 +59,7 @@ export default function ExperienceInfo(props) {
                     value={props.location}
                     onChange={props.onChange}
                 />
-                <label htmlFor="description">description</label>
+                <label htmlFor="description">Description</label>
                 <input
                     type="text"
                     placeholder="Description"

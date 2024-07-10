@@ -4,7 +4,15 @@ export default function EducationInfo(props) {
 
     return (
         <form className="education-info form" >
-            {!props.isActive && <h3>{props.school}</h3>}
+            {(() => {
+                if (!props.isActive && !props.school) {
+                    return <h4>School Name</h4>
+                } else if (props.isActive) {
+                    return ''
+                } else {
+                    return <h4>{props.school}</h4>
+                }
+            })()} 
             {props.isActive &&     
             <>
                 <label htmlFor="school">School</label>
