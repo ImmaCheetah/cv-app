@@ -49,7 +49,7 @@ export default function EducationInfo(props) {
                 />
                 <label htmlFor="start-date">Start Date</label>
                 <input
-                    type="text"
+                    type="date"
                     placeholder="Start Date"
                     id="start-date"
                     name="startDate"
@@ -58,7 +58,7 @@ export default function EducationInfo(props) {
                 />
                 <label htmlFor="end-date">End Date</label>
                 <input
-                    type="text"
+                    type="date"
                     placeholder="End Date"
                     id="end-date"
                     name="endDate"

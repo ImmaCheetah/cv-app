@@ -15,7 +15,7 @@ img {
     padding: 1em;
     display: flex;
     gap: 1em;
-    font-size: 1.1em;
+    font-size: 1.3em;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +26,7 @@ img {
 }
 
 .full-name {
-    font-size: 2em;
+    padding-top: 0.2em;
+    font-size: 2.5em;
     font-weight: bold;
 }

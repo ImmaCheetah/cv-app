@@ -1,12 +1,12 @@
-import '../styles/education.css'
+import '../styles/section.css'
 
 export default function EducationDisplay(props) {
     const list = props.educationArray.map((education) => {
         return (
             <div className="display education-div">
                 <div className="left-info">
-                    <p className='degree'>{education.degree}</p>
-                    <p className='school'>{education.school}</p>
+                    <p className='left-header degree'>{education.degree}</p>
+                    <p className='left-header-desc school'>{education.school}</p>
                 </div>
                 <div className="right-info">
                     <p className='date'>{education.startDate} {education.endDate && '-'} {education.endDate}</p>
@@ -18,6 +18,7 @@ export default function EducationDisplay(props) {
 
     return (
         <>
+            <h5 className='section-header'>Education</h5>
             {list}
         </>
     )

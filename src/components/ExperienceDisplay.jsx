@@ -1,20 +1,26 @@
+import '../styles/section.css'
+
 export default function ExperienceDisplay(props) {
     const list = props.experienceArray.map((experience) => {
         return (
             <div className="display experience-div">
-                <h1>{experience.company}</h1>
-                <h2>{experience.title}</h2>
-                <h2>{experience.startDate}</h2>
-                <h2>{experience.endDate}</h2>
-                <h2>{experience.location}</h2>
-                <h2>{experience.description}</h2>
+                <div className="left-info">
+                    <p className="left-header company">{experience.company}</p>
+                    <p className="left-header-desc title">{experience.title}</p>
+                    <p className="description">{experience.description}</p>
+                </div>
+                <div className="right-info">
+                    <p className='date'>{experience.startDate} {experience.endDate && '-'} {experience.endDate}</p>
+                    <p className="location">{experience.location}</p>
+                </div>
             </div>
         )
     })
 
     return (
-        <div className="experience-display-div" >
+        <>
+            <h5 className='section-header'>Experience</h5>
             {list}
-        </div>
+        </>
     )
 }
