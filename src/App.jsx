@@ -7,6 +7,7 @@ import EducationInfo from './components/EducationInfo'
 import EducationDisplay from './components/EducationDisplay'
 import ExperienceInfo from './components/ExperienceInfo'
 import ExperienceDisplay from './components/ExperienceDisplay'
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
 
   const [educationArray, setEducationArray] = useState([
     {
-      id: 1,
+      id: uuidv4(),
       school: '',
       degree: '',
       startDate: '', 
@@ -34,7 +35,7 @@ function App() {
 
   const [experienceArray, setExperienceArray] = useState([
     {
-      id: 1,
+      id: uuidv4(),
       company: '',
       title: '',
       startDate: '', 
@@ -66,7 +67,7 @@ function App() {
   function addEducation() {
     setEducationArray(prevEducation => {
       return [...prevEducation, {
-        id: prevEducation.length + 1,
+        id: uuidv4(),
         school: 'School Name',
         degree: '',
         startDate: '', 
@@ -100,7 +101,7 @@ function App() {
   function addExperience() {
     setExperienceArray(prevExperience => {
       return [...prevExperience, {
-        id: prevExperience.length + 1,
+        id: uuidv4(),
         company: '',
         title: '',
         startDate: '', 
@@ -124,6 +125,7 @@ function App() {
       <>
         <EducationInfo 
           {...education} 
+          key={education.id}
           isActive={activeEduIndex === index} 
           onClick={() => setActiveEduIndex(index)}
           onToggle={() => setActiveEduIndex(false)}
@@ -138,7 +140,8 @@ function App() {
     return (
       <>
         <ExperienceInfo 
-          {...experience} 
+          {...experience}
+          key={experience.id} 
           isActive={activeExpIndex === index} 
           onClick={() => setActiveExpIndex(index)}
           onToggle={() => setActiveExpIndex(false)}
