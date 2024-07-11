@@ -68,7 +68,7 @@ h1, h2, h3 {
 }
 
 .user-output-container {
-    min-width: 45vw;
+    max-width: 45vw;
     border: solid 1px black;
     background-color: white;
 }

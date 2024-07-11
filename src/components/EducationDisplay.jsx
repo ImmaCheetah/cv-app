@@ -1,19 +1,24 @@
+import '../styles/education.css'
+
 export default function EducationDisplay(props) {
     const list = props.educationArray.map((education) => {
         return (
-            <div>
-                <h1>{education.school}</h1>
-                <h2>{education.degree}</h2>
-                <h2>{education.startDate}</h2>
-                <h2>{education.endDate}</h2>
-                <h2>{education.location}</h2>
+            <div className="display education-div">
+                <div className="left-info">
+                    <p className='degree'>{education.degree}</p>
+                    <p className='school'>{education.school}</p>
+                </div>
+                <div className="right-info">
+                    <p className='date'>{education.startDate} {education.endDate && '-'} {education.endDate}</p>
+                    <p className='location'>{education.location}</p>
+                </div>
             </div>
         )
     })
 
     return (
-        <div className="education-display-div" >
+        <>
             {list}
-        </div>
+        </>
     )
 }

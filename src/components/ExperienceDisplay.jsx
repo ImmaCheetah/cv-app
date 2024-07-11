@@ -1,7 +1,7 @@
 export default function ExperienceDisplay(props) {
     const list = props.experienceArray.map((experience) => {
         return (
-            <div>
+            <div className="display experience-div">
                 <h1>{experience.company}</h1>
                 <h2>{experience.title}</h2>
                 <h2>{experience.startDate}</h2>
