@@ -1,48 +1,51 @@
-.general-info-div, .education-info-div, .experience-info-div {
-    background-color: rgb(255, 255, 255);
-    border-radius: 0.5em;
-    box-shadow: 10px 10px 14px -14px rgba(116, 111, 111, 0.75);
-    margin-bottom: 2em;
-    position: relative;
-    padding: 1.5em;
+.general-info-div,
+.education-info-div,
+.experience-info-div {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5em;
+  box-shadow: 10px 10px 14px -14px rgba(116, 111, 111, 0.75);
+  margin-bottom: 2em;
+  position: relative;
+  padding: 1.5em;
 }
 
 h4 {
-    font-size: 1.3em;
-    font-weight: bold;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .form-placeholder {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
 }
 
 .form {
-    display: block;
-    background-color: rgb(255, 255, 255);
-    max-width: 15em;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  max-width: 15em;
 }
 
 .form label {
-    font-weight: bold;
-    margin-bottom: 5em;
+  font-weight: bold;
+  margin-bottom: 5em;
 }
 
-.form input, textarea {
-    appearance: none;
-    border: none;
-    background-color: rgb(245, 245, 245);
-    border-radius: 0.3em;
-    padding: 0.5em;
-    font-size: 1em;
-    margin-bottom: 0.8em;
-    margin-top: 0.2em;
-    width: 100%;
+.form input,
+textarea {
+  appearance: none;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.3em;
+  padding: 0.5em;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+  margin-top: 0.2em;
+  width: 100%;
 }
 
 textarea {
-    font-family: "Noto Sans", sans-serif;
-    resize: vertical;
+  font-family: "Noto Sans", sans-serif;
+  resize: vertical;
 }
